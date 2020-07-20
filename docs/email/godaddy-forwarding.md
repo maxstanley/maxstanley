@@ -14,6 +14,6 @@ If you want to be able to send from an email address from this domain you will n
 
 ## Sources
 
-[Set up my forwarding email address - GoDaddy](https://uk.godaddy.com/help/set-up-my-forwarding-email-address-7598)
+[Set up my forwarding email address - GoDaddy](https://uk.godaddy.com/help/set-up-my-forwarding-email-address-7598)  
 [Checking and managing my MX records - GoDaddy](https://uk.godaddy.com/help/set-up-my-forwarding-email-address-7598)
 
