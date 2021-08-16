@@ -5,6 +5,7 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{array}
+\usepackage{tikz}
 
 \begin{document}
 
@@ -13,6 +14,20 @@
 \pagenumbering{gobble}
 \titlespacing\section{0pt}{0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \setlist[itemize]{leftmargin=*}
+
+% https://tex.stackexchange.com/questions/488961/correct-way-of-drawing-empty-half-filled-and-fully-filled-circles/488963
+\newcommand*\emptycirc[1][1ex]{\tikz\draw (0,0) circle (#1);}
+\newcommand*\fullcirc[1][1ex]{\tikz\fill (0,0) circle (#1);}
+
+% https://tex.stackexchange.com/questions/300207/repeat-characters-n-times
+\newcount\myloopcounter
+\newcommand{\repeatit}[2][10]{%
+  \myloopcounter0% initialize the loop counter
+  \loop\ifnum\myloopcounter < #1 % Test if the loop counter is < #1
+  #2%
+  \advance\myloopcounter by 1 % 
+  \repeat % start again
+}
 
 \begin{center}
 \begin{huge}
@@ -92,18 +107,18 @@ The Apprenticeship has provided me with an excellent opportunity to learn a rang
 
 \begin{center}
 \begin{tabular}{ c | c | c | c } 
-	\textbf{Programming Languages} & \textbf{Technologies} & \textbf{Skills}  & \textbf{Interests}           \\
+	\textbf{Programming Languages}                                                 & \textbf{Technologies} & \textbf{Skills}  & \textbf{Interests}           \\
 
-	                               &                       &                  &                              \\
-	C++17                          & React                 & Highly Adaptable & Rust                         \\
-	GoLang                         & Docker                & Avid Learner     & Microservice Architectures   \\
-	TypeScript                     & NodeJS                & Agile            & Site Reliability Engineering \\
-	Python                         & Git                   & Collaborative    & DevSecOps                    \\
-	                               & SQL                   &                  & Continuous Delivery          \\
-	                               & Vim                   &                  &                              \\
-	                               & Mongo                 &                  &                              \\
-	                               & AWS                   &                  &                              \\
-	                               & Linux                 &                  &                              \\
+	                                                                               &                       &                  &                              \\
+	C++17 \hfill \repeatit[4]{ \fullcirc[1ex]} \repeatit[1]{\emptycirc[1ex] }      & React                 & Highly Adaptable & Rust                         \\
+	GoLang \hfill \repeatit[4]{ \fullcirc[1ex]} \repeatit[1]{\emptycirc[1ex] }     & Docker                & Avid Learner     & Microservice Architectures   \\
+	TypeScript \hfill \repeatit[3]{ \fullcirc[1ex]} \repeatit[2]{\emptycirc[1ex] } & NodeJS                & Agile            & Site Reliability Engineering \\
+	Python \hfill \repeatit[3]{ \fullcirc[1ex]} \repeatit[2]{\emptycirc[1ex] }     & Git                   & Collaborative    & DevSecOps                    \\
+	Java \hfill \repeatit[2]{ \fullcirc[1ex]} \repeatit[3]{\emptycirc[1ex] }       & SQL                   &                  & Continuous Delivery          \\
+	                                                                               & Vim                   &                  &                              \\
+	                                                                               & Mongo                 &                  &                              \\
+	                                                                               & AWS                   &                  &                              \\
+	                                                                               & Linux                 &                  &                              \\
 
 \end{tabular}
 \end{center}
@@ -150,7 +165,6 @@ Maths | Physics | Religious Studies \& Philosophy
 \end{center}
 
 \textbf{GCSEs} - Solihull School \hfill 09/2014 - 06/2016
-
 \begin{center}
 Maths | Physics | Chemistry | Biology | English Literature \& Language
 
